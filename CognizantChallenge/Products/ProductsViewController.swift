@@ -134,6 +134,21 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let product = self.viewModel.products?[indexPath.item] {
+            let detailsViewModel = DetailsViewModel(product: product)
+            if let detailsViewController = DetailsViewController.newInstance(viewModel: detailsViewModel) {
+                if (UIDevice.current.userInterfaceIdiom == .pad) {
+                    detailsViewController.modalPresentationStyle = .formSheet
+                    self.navigationController?.present(detailsViewController, animated: true, completion: nil)
+                }
+                else {
+                    self.navigationController?.pushViewController(detailsViewController, animated: true)
+                }
+            }
+        }
+    }
+    
     // MARK: Helper Methods
     
     @objc func updateLayout() {

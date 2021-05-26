@@ -12,8 +12,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     
-    var onPrepareForReuse: (() -> Void)?
-    
     private func commonInit() {
         self.layer.cornerRadius = 0.0
         self.layer.borderWidth = 0.0
@@ -34,11 +32,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         commonInit()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        self.onPrepareForReuse?()
     }
 }
