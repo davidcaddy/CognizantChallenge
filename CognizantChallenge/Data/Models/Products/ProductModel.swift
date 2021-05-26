@@ -12,8 +12,8 @@ class ProductModel: Decodable {
     struct AdditionalInformation: Decodable {
         let overviewUrl: URL?
         let termsUrl: URL?
-        let eligibilityUrl: URL?
-        let feesAndPricingUrl: URL?
+        let eligibilityUrl: String?
+        let feesAndPricingUrl: String?
         let bundleUrl: URL?
         
         enum CodingKeys: String, CodingKey {

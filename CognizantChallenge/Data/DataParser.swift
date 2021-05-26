@@ -49,7 +49,6 @@ class DataParser {
         }
         catch let error as NSError {
             print("[DataParser] Failed parse product details data: \(error.localizedDescription)")
-            print(error)
         }
         
         return nil

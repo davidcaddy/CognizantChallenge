@@ -9,6 +9,16 @@ import Foundation
 
 class DataManager {
     
+    enum FetchError: Error {
+        case badRequest
+        case notAcceptable
+        case unprocessableEntity
+        case tooManyRequests
+        case serverError
+        case malformedResponse
+        case unknown
+    }
+    
     static let shared = DataManager()
     
     private let parser = DataParser()
@@ -19,36 +29,41 @@ class DataManager {
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess")
     private var activeTasks: [UUID: URLSessionDataTask] = [:]
     
-    private let requiredHeaders = ["x-v": "2"]
+    private let requiredHeaders = ["Accept": "application/json", "x-v": "2"]
     
     private init() {
     }
     
-    func fetchProducts(completion: ((_ reponse: ProductsResponseModel?) -> Void)?) {
-        if let productsUrl = URL(string: "\(BASE_URL)\(PRODUCTS_URI)") {
-            _ = fetchData(atUrl: productsUrl, headers: self.requiredHeaders) { (data) in
-                if let responseData = data {
-                    completion?(self.parser.parseProducts(fromData: responseData))
+    func fetchProducts(pageSize: Int, pageOffset: Int, completion: ((_ result: Result<ProductsResponseModel, FetchError>) -> Void)?) {
+        var productsURL = URLComponents(string: "\(BASE_URL)\(PRODUCTS_URI)")
+        productsURL?.queryItems = [
+            URLQueryItem(name: "page-size", value: String(pageSize)),
+            URLQueryItem(name: "page", value: String(pageOffset))
+        ]
+        if let url = productsURL?.url {
+            _ = fetchData(atURL: url, headers: self.requiredHeaders) { (data) in
+                if let responseData = data, let response = self.parser.parseProducts(fromData: responseData) {
+                    completion?(.success(response))
                     return
                 }
-                completion?(nil)
+                completion?(.failure(.malformedResponse))
             }
         }
     }
     
-    func fetchProductDetails(productID: String, completion: ((_ reponse: ProductDetailsResponseModel?) -> Void)?) {
-        if let detailsUrl = URL(string: "\(BASE_URL)\(PRODUCTS_URI)/\(productID)") {
-            _ = fetchData(atUrl: detailsUrl, headers: self.requiredHeaders) { (data) in
-                if let responseData = data {
-                    completion?(self.parser.parseProductDetails(fromData: responseData))
+    func fetchProductDetails(productID: String, completion: ((_ result: Result<ProductDetailsResponseModel, FetchError>) -> Void)?) {
+        if let detailsURL = URL(string: "\(BASE_URL)\(PRODUCTS_URI)/\(productID)") {
+            _ = fetchData(atURL: detailsURL, headers: self.requiredHeaders) { (data) in
+                if let responseData = data, let response = self.parser.parseProductDetails(fromData: responseData) {
+                    completion?(.success(response))
                     return
                 }
-                completion?(nil)
+                completion?(.failure(.malformedResponse))
             }
         }
     }
     
-    func fetchData(atUrl url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) -> UUID {
+    func fetchData(atURL url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) -> UUID {
         let identifier = UUID()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
