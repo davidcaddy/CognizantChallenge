@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet weak var dismissButton: UIButton!
     
     private var viewModel: DetailsViewModel!
     
@@ -23,6 +24,10 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (UIDevice.current.userInterfaceIdiom != .phone) {
+            self.dismissButton.isHidden = false
+        }
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
@@ -39,6 +44,12 @@ class DetailsViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // MARK: User Interactions
+    
+    @IBAction func dismiss(_ sender: Any?) {
+        dismiss(animated: true, completion: nil)
     }
 
 }

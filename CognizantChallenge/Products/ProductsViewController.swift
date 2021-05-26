@@ -51,21 +51,12 @@ class ProductsViewController: UIViewController {
         
         let collectionViewLayout = ProductsCollectionViewLayout(minimumInteritemSpacing: CELL_INTERITEM_SPACING, minimumLineSpacing: CELL_LINE_SPACING, sectionInset: SECTION_INSETS)
         collectionViewLayout.columnCountProvider = { collectionViewBounds in
-            #if targetEnvironment(macCatalyst)
-                let maxColumnWidth: CGFloat = 280.0
-                return Int(collectionViewBounds.width / maxColumnWidth)
-            #else
-                if (UIDevice.current.userInterfaceIdiom == .pad) {
-                    if (self.traitCollection.horizontalSizeClass == .compact) {
-                        return 1
-                    }
-                    
-                    return UIDevice.current.orientation.isPortrait ? 2 : 3
-                }
-                else {
-                    return 1
-                }
-            #endif
+            if (UIDevice.current.userInterfaceIdiom == .pad) {
+                return self.traitCollection.horizontalSizeClass == .compact ? 1 : 3
+            }
+            else {
+                return 1
+            }
         }
         self.collectionView.setCollectionViewLayout(collectionViewLayout, animated: false)
         

@@ -119,9 +119,30 @@
                     <view key="view" contentMode="scaleToFill" id="uvG-fY-Hv4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7u-TW-d4g">
+                                <rect key="frame" x="354" y="60" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6rF-Hu-vak"/>
+                                    <constraint firstAttribute="width" constant="44" id="8gq-mA-sr6"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" image="DismissButtonIcon"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="CjQ-J1-XDz" eventType="touchUpInside" id="2bm-tP-bfw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iEz-qK-WI2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P7u-TW-d4g" firstAttribute="top" secondItem="iEz-qK-WI2" secondAttribute="top" constant="16" id="K9b-Ks-cO5"/>
+                            <constraint firstItem="iEz-qK-WI2" firstAttribute="trailing" secondItem="P7u-TW-d4g" secondAttribute="trailing" constant="16" id="uEr-Zm-cv9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="P7u-TW-d4g" id="kEE-4T-L8H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jA3-mK-Dxc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DismissButtonIcon" width="44" height="44"/>
         <namedColor name="AccentColor">
             <color red="0.96109187436270549" green="0.80288482900333413" blue="0.27141562940705749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
