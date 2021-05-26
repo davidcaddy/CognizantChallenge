@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -105,8 +105,15 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.viewModel.retrieveProductsList()
     }
     
-    // MARK: UICollectionViewDelegate Implementation
+    // MARK: Helper Methods
+    
+    @objc func updateLayout() {
+        self.collectionView.collectionViewLayout.invalidateLayout()
+    }
+}
 
+extension ProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -147,12 +154,6 @@ class ProductsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 }
             }
         }
-    }
-    
-    // MARK: Helper Methods
-    
-    @objc func updateLayout() {
-        self.collectionView.collectionViewLayout.invalidateLayout()
     }
 }
 

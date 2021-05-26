@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    
     private var viewModel: DetailsViewModel!
     
     static func newInstance(viewModel: DetailsViewModel) -> DetailsViewController? {
