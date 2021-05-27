@@ -40,11 +40,9 @@ class DetailsViewController: UIViewController {
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.showsVerticalScrollIndicator = true
         self.collectionView.alwaysBounceVertical = true
-        let provider = {(_: Int, layoutEnv: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
-            return .list(using: configuration, layoutEnvironment: layoutEnv)
-        }
-        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: provider)
+        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .grouped)
+        self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        self.collectionView.delegate = self
         
         if (UIDevice.current.userInterfaceIdiom != .phone) {
             self.dismissButton.isHidden = false
@@ -132,5 +130,11 @@ extension DetailsViewController {
             configuration.secondaryText = item.details
             cell.contentConfiguration = configuration
         }
+    }
+}
+
+extension DetailsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }
