@@ -1,0 +1,395 @@
+{
+    "data": {
+        "products": [
+            {
+                "productId": "99563efaa4324acea46c213d7d96dd8c",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:11.000895Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Low Fee Gold",
+                "description": "Enjoy the flexibility and convenience of a credit card with no annual fee in the first year and included international travel insurance (restrictions, exclusions (including for pre-existing medical conditions and persons aged 80 years or over), limits, sub-limits and excesses apply).",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/credit-cards/low-fee-gold.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/credit-cards/low-fee-gold.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/credit-cards/low-fee-gold.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/credit-cards/low-fee-gold.html#rates"
+                }
+            },
+            {
+                "productId": "6512302188d8496baba2fbfd7dbba9a7",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:10.111126Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Awards credit card",
+                "description": "For customers who want a lower annual fee and credit limit, but still like to earn Awards points.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/personal/credit-cards/awards.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/personal/credit-cards/awards.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/personal/credit-cards/awards.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "6a43e44746b44f2dad11a5f0c75ef8f3",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:10.416927Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Platinum Awards credit card",
+                "description": "A credit card with the opportunity to earn Awards points and take advantage of extras like international travel insurance.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/credit-cards/platinum.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/credit-cards/platinum.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/credit-cards/platinum.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "4002561833054353a1fe48d27be120aa",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:07.025633Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Low Rate credit card",
+                "description": "Ideal for small business owners looking for a line of credit with a competitive interest rate and no annual fee. Note, this product does not include an interest free day period.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/business/business-credit-cards/business-low-rate-credit-card.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/business/business-credit-cards/business-low-rate-credit-card.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/business/business-credit-cards/business-low-rate-credit-card.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/business/pds/003-840-personal-liability-card-fees.pdf"
+                }
+            },
+            {
+                "productId": "5b47845a7f0044e58db616bb734e8350",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:07.251864Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Interest-Free Days credit card",
+                "description": "Designed for those looking for a card with a competitive interest-free period to help with business cash flow.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/business/business-credit-cards/business-interest-free-days-credit-card.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/business/business-credit-cards/business-interest-free-days-credit-card.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/business/business-credit-cards/business-interest-free-days-credit-card.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/business/pds/003-840-personal-liability-card-fees.pdf"
+                }
+            },
+            {
+                "productId": "5f05d7f60e0040bfbc4f3a89c3181f5f",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:09.709376Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Business Awards credit card",
+                "description": "Perfect for those looking for a competitive interest-free period on purchases and to reward themselves for business purchases.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-credit-card.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-credit-card.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-credit-card.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "8df91527a5774d7bb795eebe2509f941",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:07.479836Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Business Platinum Awards credit card",
+                "description": "Earn 1 Awards point for every dollar you spend on your business expenses.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-platinum-credit-card.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-platinum-credit-card.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/business/business-credit-cards/business-awards-credit-cards/business-awards-platinum-credit-card.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "d13dbe5f4f3b424298056d93c1079b00",
+                "effectiveFrom": "2014-12-31T13:00:00Z",
+                "effectiveTo": "2099-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:03.491108Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "CommBank Essentials credit card",
+                "description": "A simple card with our lowest rate on purchases, helping you stay in control.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/credit-cards/commbank-essentials.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/credit-cards/commbank-essentials.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/credit-cards/commbank-essentials.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "eecdf5a04ec94565974b3a8aa3263257",
+                "effectiveFrom": "2020-01-14T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2020-06-04T06:00:04.9171Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "Ultimate Awards credit card",
+                "description": "Our most rewarding credit card with uncapped points earning potential, exclusive travel benefits and no monthly fee for eligible customers.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/credit-cards/ultimate.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/credit-cards/ultimate.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/credit-cards/ultimate.html",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "ce01a5a0965b45d281b624ff2e6d2f12",
+                "effectiveFrom": "2020-10-15T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2020-12-02T23:00:10.195634Z",
+                "productCategory": "CRED_AND_CHRG_CARDS",
+                "name": "CommBank Neo Card",
+                "description": "It's a new way to pay! An interest-free credit card without any late fees or surprise charges - just a flat monthly fee. Say goodbye to complex percentages and calculations.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/credit-cards/commbank-neo.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/credit-cards/commbank-neo.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/cc2-cou.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/apply-online/download-printed-forms/ADB1682.pdf"
+                }
+            },
+            {
+                "productId": "4bf3ecbdf7b447ef97c815751377715d",
+                "effectiveFrom": "2000-01-01T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "PERS_LOANS",
+                "name": "Secured Personal Loan",
+                "description": "Unlock the value of your car for a reduced interest rate.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/personal-loans/secured-car-loan.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/personal-loans/secured-car-loan.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/personal-loans/secured-car-loan/rates-and-fees.html"
+                }
+            },
+            {
+                "productId": "ae29850ddb9b437393b8ea49bffba09e",
+                "effectiveFrom": "2000-01-01T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-03-25T13:00:00Z",
+                "productCategory": "PERS_LOANS",
+                "name": "Fixed Rate Personal Loan",
+                "description": "Stay in control with a fixed interest rate and fixed repayments for the life of the loan",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/personal-loans/fixed-rate-loan.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/personal-loans/fixed-rate-loan.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal-loans/fixed-rate-loan/rates-and-fees.html"
+                }
+            },
+            {
+                "productId": "3d41b9c0127a4905ad75cad2d79c3554",
+                "effectiveFrom": "2000-01-01T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-03-25T13:00:00Z",
+                "productCategory": "PERS_LOANS",
+                "name": "Variable Rate Personal Loan",
+                "description": "Get a competitive rate and have the flexibility to make additional repayments at any time without a fee.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/personal-loans.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADV12663.PDF",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB2911.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/personal/personal-loans/variable-rate-loan/rates-and-fees.html?ei=rates_fees-see-more"
+                }
+            },
+            {
+                "productId": "a64ba0fa05fb43ef8082f76ed69a64d8",
+                "effectiveFrom": "2020-01-01T00:00:01Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2020-07-24T00:00:01Z",
+                "productCategory": "OVERDRAFTS",
+                "name": "Personal overdrafts",
+                "description": "A personal overdraft can help you manage your cash flow by giving you access to additional funds (up to an approved limit) when you need it.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/banking/personal-overdrafts.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/banking/personal-overdrafts.html",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/ADB3784.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/banking/personal-overdrafts.html"
+                }
+            },
+            {
+                "productId": "ed65bdaefe1d4b2d83cdcd384c9d582d",
+                "effectiveFrom": "2019-12-30T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "TRANS_AND_SAVINGS_ACCOUNTS",
+                "name": "Everyday Offset",
+                "description": "Everyday Offset is a feature of our Complete Access Transaction account which is linked to an eligible home loan, and account holder(s) must also be account holders of the linked home loan. Interest is not charged on the part of the Home Loan balance equal to the Transaction account. Full terms and conditions for transaction and savings accounts are available at CommBank.com.au or from any branch of the Commonwealth Bank. Fees and charges apply.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/home-loans/interest-offset.html",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/005-309-everyday-offset.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/005-309-everyday-offset.pdf",
+                    "eligibilityUri": "",
+                    "feesAndPricingUri": ""
+                }
+            },
+            {
+                "productId": "5f37d25d580c4190a8f6fb1df01fe769",
+                "effectiveFrom": "1999-12-31T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "RESIDENTIAL_MORTGAGES",
+                "name": "Extra Home Loan",
+                "description": "A home loan with a low interest rate, low fees and flexible features",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/digital/homeloanappointment",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Extra-home-loan.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/utc-home-loan.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Extra-home-loan.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/003-750.pdf"
+                }
+            },
+            {
+                "productId": "3dd847dd2a5e450b83a0caa972d68e84",
+                "effectiveFrom": "1999-12-31T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "RESIDENTIAL_MORTGAGES",
+                "name": "Investment Extra Home Loan",
+                "description": "A home loan with a low interest rate, low fees and flexible features",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/digital/homeloanappointment",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Extra-home-loan.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/utc-home-loan.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Extra-home-loan.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/003-750.pdf"
+                }
+            },
+            {
+                "productId": "f1d6fcc359804f3c9365d576c56356fc",
+                "effectiveFrom": "1999-12-31T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "RESIDENTIAL_MORTGAGES",
+                "name": "Standard Variable Rate Home Loan",
+                "description": "Our Standard Variable Rate Home Loan is a flexible loan with a full range of features.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/digital/homeloanappointment",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Standard_Variable_Rate.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/utc-home-loan.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Standard_Variable_Rate.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/003-750.pdf"
+                }
+            },
+            {
+                "productId": "6c781d6471644fe084847533ab31aca2",
+                "effectiveFrom": "1999-12-31T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "RESIDENTIAL_MORTGAGES",
+                "name": "Investment Standard Variable Rate Home Loan",
+                "description": "Our Standard Variable Rate Home Loan is a flexible loan with a full range of features.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/digital/homeloanappointment",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Standard_Variable_Rate.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/utc-home-loan.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Standard_Variable_Rate.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/003-750.pdf"
+                }
+            },
+            {
+                "productId": "cb2ddd5cbeb14704a9e20bcc2b78bb82",
+                "effectiveFrom": "1999-12-31T13:00:00Z",
+                "effectiveTo": "9999-12-30T13:00:00Z",
+                "lastUpdated": "2021-05-06T14:00:00Z",
+                "productCategory": "RESIDENTIAL_MORTGAGES",
+                "name": "1 year fixed rate Home Loan",
+                "description": "Keep your budget on track with competitive fixed rates and a range of repayment options.",
+                "brand": "CBA",
+                "brandName": "CommBank",
+                "applicationUri": "https://www.commbank.com.au/digital/homeloanappointment",
+                "isTailored": false,
+                "additionalInformation": {
+                    "overviewUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Fixed_Rate.pdf",
+                    "termsUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/utc-home-loan.pdf",
+                    "eligibilityUri": "https://www.commbank.com.au/content/dam/commbank/personal/home-loans/fact-sheets/Fixed_Rate.pdf",
+                    "feesAndPricingUri": "https://www.commbank.com.au/content/dam/commbank/personal/apply-online/download-printed-forms/003-750.pdf"
+                }
+            }
+        ]
+    },
+    "links": {
+        "self": "https://api.commbank.com.au/public/cds-au/v1/banking/products?page=2&page-size=20",
+        "first": "https://api.commbank.com.au/public/cds-au/v1/banking/products?page=1&page-size=20",
+        "prev": "https://api.commbank.com.au/public/cds-au/v1/banking/products?page=1&page-size=20",
+        "next": "https://api.commbank.com.au/public/cds-au/v1/banking/products?page=3&page-size=20",
+        "last": "https://api.commbank.com.au/public/cds-au/v1/banking/products?page=4&page-size=20"
+    },
+    "meta": {
+        "totalRecords": 72,
+        "totalPages": 4
+    }
+}

@@ -10,24 +10,69 @@ import XCTest
 
 class CognizantChallengeTests: XCTestCase {
 
+    private let dataProvider = MockDataProvider()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testProductsFetch() {
+        let expectation = XCTestExpectation(description: "Fetch completion handler")
+        self.dataProvider.fetchProducts(pageSize: 20, pageOffset: 1) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.products.count, 20, "Products count does not match expected value")
+            case .failure(_):
+                XCTFail("Products list not fetched properly")
+            }
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testDetailsFetch() {
+        let productID = "33557e367d324529b38813adfc655b55"
+        let expectation = XCTestExpectation(description: "Fetch completion handler")
+        self.dataProvider.fetchProductDetails(productID: productID) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.product.identifier, productID, "Product identifier does not match expected value")
+            case .failure(_):
+                XCTFail("Products list not fetched properly")
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testProductsViewModelLoadPage1() {
+        let viewModel = ProductsViewModel(dataProvider: self.dataProvider)
+        let expectation = XCTestExpectation(description: "Fetch completion handler")
+        viewModel.updateHandler = { products in
+            XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+            XCTAssertEqual(viewModel.currentPage, 1, "Current page does not match expected value")
+            XCTAssertEqual(viewModel.hasMorePages, true, "Has more pages flag does not match expected value")
+            XCTAssertEqual(products.first?.identifier, "ad22b1f0967349e8a5d586afe7f0d845", "First product identifier of page 1 does not match expected value")
+            expectation.fulfill()
+        }
+        viewModel.retrieveProductsList()
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testProductsViewModelLoadPage2() {
+        let viewModel = ProductsViewModel(dataProvider: self.dataProvider)
+        let expectation = XCTestExpectation(description: "Fetch completion handler")
+        viewModel.updateHandler = { products in
+            XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+            XCTAssertEqual(viewModel.currentPage, 2, "Current page does not match expected value")
+            XCTAssertEqual(viewModel.hasMorePages, true, "Has more pages flag does not match expected value")
+            XCTAssertEqual(products.first?.identifier, "99563efaa4324acea46c213d7d96dd8c", "First product identifier of page 2 does not match expected value")
+            expectation.fulfill()
+        }
+        viewModel.retrieveProductsList(page: 2)
+        wait(for: [expectation], timeout: 1.0)
     }
 
 }
