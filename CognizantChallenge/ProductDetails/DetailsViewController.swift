@@ -8,8 +8,16 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
+    typealias DiffableDataSource = UICollectionViewDiffableDataSource<Section, ListItem>
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    lazy var dataSource = createDataSource()
     
     private var viewModel: DetailsViewModel!
     
@@ -25,9 +33,42 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.titleLabel.text = self.viewModel.product.name
+        self.detailsLabel.text = self.viewModel.product.description
+        
+        self.collectionView.backgroundColor = .clear
+        self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView.showsVerticalScrollIndicator = true
+        self.collectionView.alwaysBounceVertical = true
+        let provider = {(_: Int, layoutEnv: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+            return .list(using: configuration, layoutEnvironment: layoutEnv)
+        }
+        collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: provider)
+        
         if (UIDevice.current.userInterfaceIdiom != .phone) {
             self.dismissButton.isHidden = false
         }
+        
+        self.viewModel.updateHandler = { [weak self] (_, productDetailsSnapShot) in
+            self?.activityIndicatorView.stopAnimating()
+            self?.applySnapshot(productDetailsSnapshot: productDetailsSnapShot)
+        }
+        self.activityIndicatorView.startAnimating()
+        self.viewModel.retrieveProductsDetails()
+        
+        applySnapshot(productDetailsSnapshot: self.viewModel.productDetailsSnapshot)
+    }
+    
+    func applySnapshot(productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>?) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ListItem>()
+        snapshot.appendSections(Section.allCases)
+        dataSource.apply(snapshot, animatingDifferences: false)
+        
+        guard let sectionSnapshot = productDetailsSnapshot else {
+            return
+        }
+        dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: false)
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
@@ -51,5 +92,45 @@ class DetailsViewController: UIViewController {
     @IBAction func dismiss(_ sender: Any?) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: Data Source
+    
+    func createDataSource() -> DiffableDataSource {
+        return DiffableDataSource(collectionView: collectionView) { collectionView, indexPath, listItem -> UICollectionViewCell? in
+            switch listItem {
+            case .header(let headerItem):
+                return collectionView.dequeueConfiguredReusableCell(
+                    using: self.headerCellRegistration(), for: indexPath, item: headerItem)
+            case .detail(let item):
+                return collectionView.dequeueConfiguredReusableCell(
+                  using: self.detailCellRegistration(), for: indexPath, item: item)
+            }
+        }
+    }
 
+}
+
+// MARK: - CollectionView Cells
+extension DetailsViewController {
+    
+    func headerCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, HeaderItem> {
+        return .init { cell, _, headerItem in
+            var configuration = cell.defaultContentConfiguration()
+            configuration.text = headerItem.title
+            cell.contentConfiguration = configuration
+            
+            let options = UICellAccessory.OutlineDisclosureOptions(style: .header)
+            let disclosureAccessory = UICellAccessory.outlineDisclosure(options: options)
+            cell.accessories = [disclosureAccessory]
+        }
+    }
+    
+    func detailCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, DetailItem> {
+        return .init { cell, _, item in
+            var configuration = cell.defaultContentConfiguration()
+            configuration.text = item.title
+            configuration.secondaryText = item.details
+            cell.contentConfiguration = configuration
+        }
+    }
 }

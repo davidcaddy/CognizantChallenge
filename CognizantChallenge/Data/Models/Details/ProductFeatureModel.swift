@@ -33,6 +33,10 @@ struct ProductFeatureModel: Decodable {
         case bonusRewards = "BONUS_REWARDS"
         case notifications = "NOTIFICATIONS"
         case other = "OTHER"
+        
+        var displayString: String {
+            return self.rawValue.replacingOccurrences(of: "_", with: " ").capitalized
+        }
     }
     
     let type: FeatureType

@@ -23,9 +23,13 @@ struct ProductEligibilityModel: Decodable {
         case naturalPerson = "NATURAL_PERSON"
         case introductory = "INTRODUCTORY"
         case other = "OTHER"
+        
+        var displayString: String {
+            return self.rawValue.replacingOccurrences(of: "_", with: " ").capitalized
+        }
     }
     
-    let type: EligibilityType
+    let type: EligibilityType?
     let additionalValue: String?
     let additionalInfo: String?
     let additionalInfoUrl: URL?

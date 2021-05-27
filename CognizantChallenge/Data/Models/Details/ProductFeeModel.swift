@@ -33,9 +33,9 @@ struct ProductFeeModel: Decodable {
             case additionalInfoUrl = "additionalInfoUrl"
         }
         
-        let name: String
+        let name: String?
         let type: DiscountType
-        let amount: String
+        let amount: String?
         let balanceRate: String?
         let transactionRate: String?
         let accruedRate: String?
@@ -60,7 +60,7 @@ struct ProductFeeModel: Decodable {
     
     let name: String
     let type: FeeType
-    let amount: String
+    let amount: String?
     let balanceRate: String?
     let transactionRate: String?
     let accruedRate: String?

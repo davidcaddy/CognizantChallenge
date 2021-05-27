@@ -35,8 +35,8 @@ struct ProductRateTierModel: Decodable {
     
     let name: String
     let unitOfMeasure: UnitOfMeasure
-    let minimumValue: Double
-    let maximumValue: Double
+    let minimumValue: Double?
+    let maximumValue: Double?
     let rateApplicationMethod: RateApplicationMethod?
     let applicabilityConditions: BankingProductRateCondition?
 }

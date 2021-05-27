@@ -120,6 +120,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7h1-zm-HVi">
+                                <rect key="frame" x="0.0" y="136.5" width="414" height="759.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FUV-LF-UnF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iBA-7n-Ffb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Et6-R4-KjN">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7u-TW-d4g">
                                 <rect key="frame" x="354" y="60" width="44" height="44"/>
                                 <constraints>
@@ -132,21 +152,52 @@
                                     <action selector="dismiss:" destination="CjQ-J1-XDz" eventType="touchUpInside" id="2bm-tP-bfw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqw-ao-X6y">
+                                <rect key="frame" x="16" y="60" width="322" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x52-fJ-Mgp">
+                                <rect key="frame" x="16" y="106" width="382" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sWv-xG-U0S">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iEz-qK-WI2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7h1-zm-HVi" firstAttribute="trailing" secondItem="iEz-qK-WI2" secondAttribute="trailing" id="72i-NH-4Yb"/>
+                            <constraint firstItem="Eqw-ao-X6y" firstAttribute="top" secondItem="iEz-qK-WI2" secondAttribute="top" constant="16" id="B1u-B5-Q1Z"/>
+                            <constraint firstItem="7h1-zm-HVi" firstAttribute="top" secondItem="x52-fJ-Mgp" secondAttribute="bottom" constant="16" id="EXu-cL-U30"/>
+                            <constraint firstItem="x52-fJ-Mgp" firstAttribute="top" secondItem="Eqw-ao-X6y" secondAttribute="bottom" constant="16" id="IGW-wD-EeY"/>
+                            <constraint firstItem="iEz-qK-WI2" firstAttribute="trailing" secondItem="x52-fJ-Mgp" secondAttribute="trailing" constant="16" id="JlH-ZT-HVm"/>
                             <constraint firstItem="P7u-TW-d4g" firstAttribute="top" secondItem="iEz-qK-WI2" secondAttribute="top" constant="16" id="K9b-Ks-cO5"/>
+                            <constraint firstItem="7h1-zm-HVi" firstAttribute="leading" secondItem="iEz-qK-WI2" secondAttribute="leading" id="NS3-C1-TGy"/>
+                            <constraint firstAttribute="bottom" secondItem="7h1-zm-HVi" secondAttribute="bottom" id="Qrx-Tc-g02"/>
+                            <constraint firstItem="x52-fJ-Mgp" firstAttribute="leading" secondItem="iEz-qK-WI2" secondAttribute="leading" constant="16" id="X7w-5Z-fWo"/>
+                            <constraint firstItem="sWv-xG-U0S" firstAttribute="centerY" secondItem="uvG-fY-Hv4" secondAttribute="centerY" id="YPy-zC-0aC"/>
+                            <constraint firstItem="P7u-TW-d4g" firstAttribute="leading" secondItem="Eqw-ao-X6y" secondAttribute="trailing" constant="16" id="Z4g-ci-EuQ"/>
+                            <constraint firstItem="sWv-xG-U0S" firstAttribute="centerX" secondItem="uvG-fY-Hv4" secondAttribute="centerX" id="oBm-9B-eam"/>
+                            <constraint firstItem="Eqw-ao-X6y" firstAttribute="leading" secondItem="iEz-qK-WI2" secondAttribute="leading" constant="16" id="oXN-eN-1bW"/>
                             <constraint firstItem="iEz-qK-WI2" firstAttribute="trailing" secondItem="P7u-TW-d4g" secondAttribute="trailing" constant="16" id="uEr-Zm-cv9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="sWv-xG-U0S" id="A4X-1H-XtZ"/>
+                        <outlet property="collectionView" destination="7h1-zm-HVi" id="QoG-gV-pVe"/>
+                        <outlet property="detailsLabel" destination="x52-fJ-Mgp" id="d8U-AY-hti"/>
                         <outlet property="dismissButton" destination="P7u-TW-d4g" id="kEE-4T-L8H"/>
+                        <outlet property="titleLabel" destination="Eqw-ao-X6y" id="4xj-P9-ewu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jA3-mK-Dxc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="246"/>
+            <point key="canvasLocation" x="589.85507246376812" y="245.75892857142856"/>
         </scene>
     </scenes>
     <resources>
