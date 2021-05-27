@@ -9,6 +9,7 @@ import Foundation
 
 class ProductsViewModel {
     
+    private let dataProvider: DataProvider
     private(set) var products: [ProductModel]?
     private let pageSize: Int = 20
     private(set) var currentPage: Int = 1
@@ -16,6 +17,10 @@ class ProductsViewModel {
     private(set) var isFetchingProducts: Bool = false
     
     var updateHandler: ((_ products: [ProductModel]) -> Void)?
+    
+    init(dataProvider: DataProvider) {
+        self.dataProvider = dataProvider
+    }
     
     func retrieveProductsList(page: Int = 1) {
         guard !self.isFetchingProducts else {
@@ -40,7 +45,7 @@ class ProductsViewModel {
                         self.products?.append(contentsOf: response.products)
                     }
                     self.updateHandler?(response.products)
-                case .failure(let error):
+                case .failure(_):
                     self.hasMorePages = true
                     self.products = []
                     self.updateHandler?([])

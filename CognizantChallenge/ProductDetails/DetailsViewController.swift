@@ -61,12 +61,12 @@ class DetailsViewController: UIViewController {
     func applySnapshot(productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>?) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, ListItem>()
         snapshot.appendSections(Section.allCases)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        self.dataSource.apply(snapshot, animatingDifferences: false)
         
         guard let sectionSnapshot = productDetailsSnapshot else {
             return
         }
-        dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: false)
+        self.dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: false)
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {

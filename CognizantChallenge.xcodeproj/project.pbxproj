@@ -35,6 +35,7 @@
 		7F9E26C7265BC56300DAD2F3 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E26C6265BC56300DAD2F3 /* ProductsViewModel.swift */; };
 		7F9E26CA265E6AC400DAD2F3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E26C9265E6AC400DAD2F3 /* DetailsViewController.swift */; };
 		7F9E26CC265E6AD800DAD2F3 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E26CB265E6AD700DAD2F3 /* DetailsViewModel.swift */; };
+		7F9E26CE265F373D00DAD2F3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E26CD265F373D00DAD2F3 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		7F9E26C8265E691200DAD2F3 /* CognizantChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CognizantChallenge.entitlements; sourceTree = "<group>"; };
 		7F9E26C9265E6AC400DAD2F3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7F9E26CB265E6AD700DAD2F3 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		7F9E26CD265F373D00DAD2F3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9E269C265B8F6C00DAD2F3 /* Models */,
+				7F9E26CD265F373D00DAD2F3 /* DataProvider.swift */,
 				7F9E269B265B8F6C00DAD2F3 /* DataManager.swift */,
 				7F9E26A4265B8F6C00DAD2F3 /* DataParser.swift */,
 			);
@@ -381,6 +384,7 @@
 				7F9E26CC265E6AD800DAD2F3 /* DetailsViewModel.swift in Sources */,
 				7F9E26C7265BC56300DAD2F3 /* ProductsViewModel.swift in Sources */,
 				7F9E26B1265BB11E00DAD2F3 /* ProductBundleModel.swift in Sources */,
+				7F9E26CE265F373D00DAD2F3 /* DataProvider.swift in Sources */,
 				7F9E26AB265B8F6C00DAD2F3 /* DataParser.swift in Sources */,
 				7F9E26C4265BC21600DAD2F3 /* ProductsCollectionViewLayout.swift in Sources */,
 				7F9E26C3265BC21600DAD2F3 /* ProductCollectionViewCell.swift in Sources */,

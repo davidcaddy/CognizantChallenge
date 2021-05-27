@@ -7,17 +7,7 @@
 
 import Foundation
 
-class DataManager {
-    
-    enum FetchError: Error {
-        case badRequest
-        case notAcceptable
-        case unprocessableEntity
-        case tooManyRequests
-        case serverError
-        case malformedResponse
-        case unknown
-    }
+class DataManager: DataProvider {
     
     static let shared = DataManager()
     

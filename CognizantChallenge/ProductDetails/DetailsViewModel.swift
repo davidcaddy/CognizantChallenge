@@ -29,8 +29,9 @@ struct HeaderItem: Hashable {
 
 class DetailsViewModel {
     
+    private let dataProvider: DataProvider
+    let product: ProductModel
     private(set) var isFetchingProductDetails: Bool = false
-    private(set) var product: ProductModel
     private(set) var productDetails: ProductDetailsResponseModel?
     var productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>? {
         return generateSnapshot()
@@ -38,8 +39,9 @@ class DetailsViewModel {
     
     var updateHandler: ((_ productDetails: ProductDetailsResponseModel?, _ productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>?) -> Void)?
     
-    init(product: ProductModel) {
+    init(product: ProductModel, dataProvider: DataProvider) {
         self.product = product
+        self.dataProvider = dataProvider
     }
     
     func retrieveProductsDetails() {
@@ -57,10 +59,9 @@ class DetailsViewModel {
                 case .success(let response):
                     self.productDetails = response
                     self.updateHandler?(response, self.generateSnapshot())
-                case .failure(let error):
+                case .failure(_):
                     self.productDetails = nil
                     self.updateHandler?(nil, nil)
-                    print(error)
                 }
             }
         }
