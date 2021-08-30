@@ -9,9 +9,7 @@ import Foundation
 
 class DataManager: DataProvider {
     
-    static let shared = DataManager()
-    
-    private let parser = DataParser()
+    private let parser: DataParsing
     
     private let BASE_URL = "https://api.commbank.com.au/public/cds-au/v1/banking"
     private let PRODUCTS_URI = "/products"
@@ -19,9 +17,10 @@ class DataManager: DataProvider {
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess")
     private var activeTasks: [UUID: URLSessionDataTask] = [:]
     
-    private let requiredHeaders = ["Accept": "application/json", "x-v": "2"]
+    private let requiredHeaders = ["Accept": "application/json", "x-v": "3"]
     
-    private init() {
+    init(dataParser: DataParsing = DataParser()) {
+        self.parser = dataParser
     }
     
     func fetchProducts(pageSize: Int, pageOffset: Int, completion: ((_ result: Result<ProductsResponseModel, FetchError>) -> Void)?) {
@@ -31,7 +30,7 @@ class DataManager: DataProvider {
             URLQueryItem(name: "page", value: String(pageOffset))
         ]
         if let url = productsURL?.url {
-            _ = fetchData(atURL: url, headers: self.requiredHeaders) { (data) in
+            fetchData(atURL: url, headers: self.requiredHeaders) { (data) in
                 if let responseData = data, let response = self.parser.parseProducts(fromData: responseData) {
                     completion?(.success(response))
                     return
@@ -43,7 +42,7 @@ class DataManager: DataProvider {
     
     func fetchProductDetails(productID: String, completion: ((_ result: Result<ProductDetailsResponseModel, FetchError>) -> Void)?) {
         if let detailsURL = URL(string: "\(BASE_URL)\(PRODUCTS_URI)/\(productID)") {
-            _ = fetchData(atURL: detailsURL, headers: self.requiredHeaders) { (data) in
+            fetchData(atURL: detailsURL, headers: self.requiredHeaders) { (data) in
                 if let responseData = data, let response = self.parser.parseProductDetails(fromData: responseData) {
                     completion?(.success(response))
                     return
@@ -53,7 +52,7 @@ class DataManager: DataProvider {
         }
     }
     
-    func fetchData(atURL url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) -> UUID {
+    private func fetchData(atURL url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) {
         let identifier = UUID()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -71,15 +70,6 @@ class DataManager: DataProvider {
         
         addTaskToActiveList(task: dataTask, identifier: identifier)
         dataTask.resume()
-        
-        return identifier
-    }
-    
-    func cancelFetch(withId identifier: UUID) {
-        self.accessQueue.sync {
-            self.activeTasks[identifier]?.cancel()
-            self.activeTasks.removeValue(forKey: identifier)
-        }
     }
     
     // MARK: Helper Methods

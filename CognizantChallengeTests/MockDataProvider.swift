@@ -16,7 +16,7 @@ class MockDataProvider: DataProvider {
     
     init() {
         let fileLoader = FileLoader()
-        let dataParser = DataParser()
+        let dataParser: DataParsing = DataParser()
         
         if let data = fileLoader.loadData(fromFileAtPath: Bundle(for: type(of: self)).path(forResource: "MockDataPage1", ofType: "json")) {
             if let productsResponse = dataParser.parseProducts(fromData: data) {

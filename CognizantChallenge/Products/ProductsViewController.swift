@@ -11,6 +11,7 @@ class ProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     private let refreshControl = UIRefreshControl()
     
@@ -60,7 +61,7 @@ class ProductsViewController: UIViewController {
         }
         self.collectionView.setCollectionViewLayout(collectionViewLayout, animated: false)
         
-        self.viewModel.updateHandler = { [weak self] products in
+        self.viewModel.updateHandler = { [weak self] response in
             guard let self = self else {
                 return
             }
@@ -68,6 +69,13 @@ class ProductsViewController: UIViewController {
             self.refreshControl.endRefreshing()
             self.activityIndicatorView.stopAnimating()
             self.collectionView.reloadData()
+            
+            switch response {
+            case .success(_):
+                self.errorLabel.isHidden = true
+            case .failure(_):
+                self.errorLabel.isHidden = false
+            }
         }
         
         self.activityIndicatorView.startAnimating()
@@ -134,7 +142,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let product = self.viewModel.products?[indexPath.item] {
-            let detailsViewModel = DetailsViewModel(product: product, dataProvider: DataManager.shared)
+            let detailsViewModel = DetailsViewModel(product: product, dataProvider: DataManager())
             if let detailsViewController = DetailsViewController.newInstance(viewModel: detailsViewModel) {
                 if (UIDevice.current.userInterfaceIdiom == .pad) {
                     detailsViewController.modalPresentationStyle = .formSheet

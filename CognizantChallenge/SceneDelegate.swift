@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            if let productsViewController = ProductsViewController.newInstance(viewModel: ProductsViewModel(dataProvider: DataManager.shared)) {
+            if let productsViewController = ProductsViewController.newInstance(viewModel: ProductsViewModel(dataProvider: DataManager())) {
                 window.rootViewController = UINavigationController(rootViewController: productsViewController)
             }
             self.window = window

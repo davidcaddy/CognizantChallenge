@@ -16,7 +16,7 @@ class ProductsViewModel {
     private(set) var hasMorePages: Bool = false
     private(set) var isFetchingProducts: Bool = false
     
-    var updateHandler: ((_ products: [ProductModel]) -> Void)?
+    var updateHandler: ((_ productsResponse: Result<[ProductModel], FetchError>) -> Void)?
     
     init(dataProvider: DataProvider) {
         self.dataProvider = dataProvider
@@ -27,7 +27,7 @@ class ProductsViewModel {
             return
         }
         self.isFetchingProducts = true
-        DataManager.shared.fetchProducts(pageSize: self.pageSize, pageOffset: page) { [weak self] response in
+        self.dataProvider.fetchProducts(pageSize: self.pageSize, pageOffset: page) { [weak self] response in
             guard let self = self else {
                 return
             }
@@ -44,11 +44,11 @@ class ProductsViewModel {
                     else {
                         self.products?.append(contentsOf: response.products)
                     }
-                    self.updateHandler?(response.products)
-                case .failure(_):
+                    self.updateHandler?(Result.success(response.products))
+                case .failure(let error):
                     self.hasMorePages = true
                     self.products = []
-                    self.updateHandler?([])
+                    self.updateHandler?(Result.failure(error))
                 }
             }
         }

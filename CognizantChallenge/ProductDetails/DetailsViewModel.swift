@@ -49,7 +49,7 @@ class DetailsViewModel {
             return
         }
         self.isFetchingProductDetails = true
-        DataManager.shared.fetchProductDetails(productID: self.product.identifier) { [weak self] response in
+        self.dataProvider.fetchProductDetails(productID: self.product.identifier) { [weak self] response in
             guard let self = self else {
                 return
             }
@@ -80,7 +80,11 @@ class DetailsViewModel {
             sectionSnapshot.append([headerListItem])
             
             for feature in features {
-                let detailsItem = DetailItem(title: feature.type.displayString, details: feature.additionalInfo)
+                var title = feature.type.displayString
+                if let additionalValue = feature.additionalValue {
+                    title += ": \(additionalValue)"
+                }
+                let detailsItem = DetailItem(title: title, details: feature.additionalInfo)
                 let detailsListItem = ListItem.detail(detailsItem)
                 sectionSnapshot.append([detailsListItem], to: headerListItem)
             }
@@ -92,7 +96,11 @@ class DetailsViewModel {
             sectionSnapshot.append([headerListItem])
             
             for eligibility in eligibilityCriteria {
-                let detailsItem = DetailItem(title: eligibility.type?.displayString ?? "-", details: eligibility.additionalInfo)
+                var title = eligibility.type?.displayString ?? "-"
+                if let additionalValue = eligibility.additionalValue {
+                    title += ": \(additionalValue)"
+                }
+                let detailsItem = DetailItem(title: title, details: eligibility.additionalInfo)
                 let detailsListItem = ListItem.detail(detailsItem)
                 sectionSnapshot.append([detailsListItem], to: headerListItem)
             }
@@ -106,7 +114,7 @@ class DetailsViewModel {
             for fee in fees {
                 var title = fee.name
                 if let cost = fee.amount {
-                    title += " - $\(cost)"
+                    title += ": $\(cost)"
                 }
                 
                 let detailsItem = DetailItem(title: title, details: fee.additionalInfo)
