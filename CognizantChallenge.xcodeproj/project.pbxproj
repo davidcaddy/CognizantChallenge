@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		629913B926DC668C00C5325B /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629913B826DC668C00C5325B /* DataParsing.swift */; };
 		7F9E2669265B8F4100DAD2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E2668265B8F4100DAD2F3 /* AppDelegate.swift */; };
 		7F9E266B265B8F4100DAD2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E266A265B8F4100DAD2F3 /* SceneDelegate.swift */; };
 		7F9E2670265B8F4100DAD2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9E266E265B8F4100DAD2F3 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		629913B826DC668C00C5325B /* DataParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
 		7F9E2665265B8F4100DAD2F3 /* CognizantChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CognizantChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9E2668265B8F4100DAD2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9E266A265B8F4100DAD2F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				7F9E269C265B8F6C00DAD2F3 /* Models */,
 				7F9E26CD265F373D00DAD2F3 /* DataProvider.swift */,
 				7F9E269B265B8F6C00DAD2F3 /* DataManager.swift */,
+				629913B826DC668C00C5325B /* DataParsing.swift */,
 				7F9E26A4265B8F6C00DAD2F3 /* DataParser.swift */,
 			);
 			path = Data;
@@ -403,6 +406,7 @@
 				7F9E26A8265B8F6C00DAD2F3 /* MetaModel.swift in Sources */,
 				7F9E26BB265BB49300DAD2F3 /* ProductLendingRateModel.swift in Sources */,
 				7F9E26CA265E6AC400DAD2F3 /* DetailsViewController.swift in Sources */,
+				629913B926DC668C00C5325B /* DataParsing.swift in Sources */,
 				7F9E26A7265B8F6C00DAD2F3 /* LinksModel.swift in Sources */,
 				7F9E26B5265BB2C300DAD2F3 /* ProductEligibilityModel.swift in Sources */,
 				7F9E26A5265B8F6C00DAD2F3 /* DataManager.swift in Sources */,
