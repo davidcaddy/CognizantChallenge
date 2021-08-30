@@ -9,8 +9,6 @@ import Foundation
 
 class DataManager: DataProvider {
     
-    static let shared = DataManager()
-    
     private let parser: DataParsing
     
     private let BASE_URL = "https://api.commbank.com.au/public/cds-au/v1/banking"

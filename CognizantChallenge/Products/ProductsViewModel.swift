@@ -27,7 +27,7 @@ class ProductsViewModel {
             return
         }
         self.isFetchingProducts = true
-        DataManager.shared.fetchProducts(pageSize: self.pageSize, pageOffset: page) { [weak self] response in
+        self.dataProvider.fetchProducts(pageSize: self.pageSize, pageOffset: page) { [weak self] response in
             guard let self = self else {
                 return
             }

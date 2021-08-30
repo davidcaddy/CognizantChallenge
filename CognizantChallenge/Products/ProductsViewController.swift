@@ -134,7 +134,7 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let product = self.viewModel.products?[indexPath.item] {
-            let detailsViewModel = DetailsViewModel(product: product, dataProvider: DataManager.shared)
+            let detailsViewModel = DetailsViewModel(product: product, dataProvider: DataManager())
             if let detailsViewController = DetailsViewController.newInstance(viewModel: detailsViewModel) {
                 if (UIDevice.current.userInterfaceIdiom == .pad) {
                     detailsViewController.modalPresentationStyle = .formSheet
