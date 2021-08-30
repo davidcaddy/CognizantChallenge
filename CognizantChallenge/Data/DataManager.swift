@@ -11,7 +11,7 @@ class DataManager: DataProvider {
     
     static let shared = DataManager()
     
-    private let parser = DataParser()
+    private let parser: DataParsing
     
     private let BASE_URL = "https://api.commbank.com.au/public/cds-au/v1/banking"
     private let PRODUCTS_URI = "/products"
@@ -19,10 +19,10 @@ class DataManager: DataProvider {
     private let accessQueue = DispatchQueue(label: "SynchronizedArrayAccess")
     private var activeTasks: [UUID: URLSessionDataTask] = [:]
     
-    private let requiredHeaders = ["Accept": "application/json", "x-v": "2"]
     private let requiredHeaders = ["Accept": "application/json", "x-v": "3"]
     
-    private init() {
+    init(dataParser: DataParsing = DataParser()) {
+        self.parser = dataParser
     }
     
     func fetchProducts(pageSize: Int, pageOffset: Int, completion: ((_ result: Result<ProductsResponseModel, FetchError>) -> Void)?) {
