@@ -20,6 +20,7 @@ class DataManager: DataProvider {
     private var activeTasks: [UUID: URLSessionDataTask] = [:]
     
     private let requiredHeaders = ["Accept": "application/json", "x-v": "2"]
+    private let requiredHeaders = ["Accept": "application/json", "x-v": "3"]
     
     private init() {
     }
