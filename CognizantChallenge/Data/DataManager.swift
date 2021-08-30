@@ -30,7 +30,7 @@ class DataManager: DataProvider {
             URLQueryItem(name: "page", value: String(pageOffset))
         ]
         if let url = productsURL?.url {
-            _ = fetchData(atURL: url, headers: self.requiredHeaders) { (data) in
+            fetchData(atURL: url, headers: self.requiredHeaders) { (data) in
                 if let responseData = data, let response = self.parser.parseProducts(fromData: responseData) {
                     completion?(.success(response))
                     return
@@ -42,7 +42,7 @@ class DataManager: DataProvider {
     
     func fetchProductDetails(productID: String, completion: ((_ result: Result<ProductDetailsResponseModel, FetchError>) -> Void)?) {
         if let detailsURL = URL(string: "\(BASE_URL)\(PRODUCTS_URI)/\(productID)") {
-            _ = fetchData(atURL: detailsURL, headers: self.requiredHeaders) { (data) in
+            fetchData(atURL: detailsURL, headers: self.requiredHeaders) { (data) in
                 if let responseData = data, let response = self.parser.parseProductDetails(fromData: responseData) {
                     completion?(.success(response))
                     return
@@ -52,7 +52,7 @@ class DataManager: DataProvider {
         }
     }
     
-    func fetchData(atURL url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) -> UUID {
+    private func fetchData(atURL url: URL, headers: [String: String]? = nil, completion: ((_ data: Data?) -> Void)?) {
         let identifier = UUID()
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -70,15 +70,6 @@ class DataManager: DataProvider {
         
         addTaskToActiveList(task: dataTask, identifier: identifier)
         dataTask.resume()
-        
-        return identifier
-    }
-    
-    func cancelFetch(withId identifier: UUID) {
-        self.accessQueue.sync {
-            self.activeTasks[identifier]?.cancel()
-            self.activeTasks.removeValue(forKey: identifier)
-        }
     }
     
     // MARK: Helper Methods
