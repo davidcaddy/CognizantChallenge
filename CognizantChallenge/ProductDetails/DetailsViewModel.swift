@@ -49,7 +49,7 @@ class DetailsViewModel {
             return
         }
         self.isFetchingProductDetails = true
-        DataManager.shared.fetchProductDetails(productID: self.product.identifier) { [weak self] response in
+        self.dataProvider.fetchProductDetails(productID: self.product.identifier) { [weak self] response in
             guard let self = self else {
                 return
             }
