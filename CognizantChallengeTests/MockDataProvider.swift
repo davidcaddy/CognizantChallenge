@@ -62,7 +62,7 @@ class MockDataProvider: DataProvider {
         else if (pageOffset == 1) {
             completion?(self.productsResponsePage1)
         }
-        else if (pageOffset == 1) {
+        else if (pageOffset == 2) {
             completion?(self.productsResponsePage2)
         }
         else {
