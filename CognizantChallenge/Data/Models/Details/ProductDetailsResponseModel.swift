@@ -24,7 +24,7 @@ struct ProductDetailsResponseModel: Decodable {
     let fees: [ProductFeeModel]?
     let depositRates: [ProductRateDepositModel]?
     let links: LinksModel
-    let meta: MetaModel
+    let meta: MetaModel?
     
     enum CodingKeys: String, CodingKey {
         case data = "data"
@@ -43,6 +43,6 @@ struct ProductDetailsResponseModel: Decodable {
         self.fees = data.fees
         self.depositRates = data.depositRates
         self.links = try keyedContainer.decode(LinksModel.self, forKey: .links)
-        self.meta = try keyedContainer.decode(MetaModel.self, forKey: .meta)
+        self.meta = try? keyedContainer.decode(MetaModel.self, forKey: .meta)
     }
 }

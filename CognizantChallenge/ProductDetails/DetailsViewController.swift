@@ -94,14 +94,17 @@ class DetailsViewController: UIViewController {
     // MARK: Data Source
     
     func createDataSource() -> DiffableDataSource {
+        let headerCellReg = headerCellRegistration()
+        let detailCellReg = detailCellRegistration()
+        
         return DiffableDataSource(collectionView: collectionView) { collectionView, indexPath, listItem -> UICollectionViewCell? in
             switch listItem {
             case .header(let headerItem):
                 return collectionView.dequeueConfiguredReusableCell(
-                    using: self.headerCellRegistration(), for: indexPath, item: headerItem)
+                    using: headerCellReg, for: indexPath, item: headerItem)
             case .detail(let item):
                 return collectionView.dequeueConfiguredReusableCell(
-                  using: self.detailCellRegistration(), for: indexPath, item: item)
+                  using: detailCellReg, for: indexPath, item: item)
             }
         }
     }
