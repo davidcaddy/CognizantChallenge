@@ -50,11 +50,16 @@ class CognizantChallengeTests: XCTestCase {
     func testProductsViewModelLoadPage1() {
         let viewModel = ProductsViewModel(dataProvider: self.dataProvider)
         let expectation = XCTestExpectation(description: "Fetch completion handler")
-        viewModel.updateHandler = { products in
-            XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+        viewModel.updateHandler = { result in
+            switch result {
+            case .failure(let error):
+                XCTFail("Expected to be a success but got a failure with \(error)")
+            case .success(let products):
+                XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+                XCTAssertEqual(products.first?.identifier, "ad22b1f0967349e8a5d586afe7f0d845", "First product identifier of page 1 does not match expected value")
+            }
             XCTAssertEqual(viewModel.currentPage, 1, "Current page does not match expected value")
             XCTAssertEqual(viewModel.hasMorePages, true, "Has more pages flag does not match expected value")
-            XCTAssertEqual(products.first?.identifier, "ad22b1f0967349e8a5d586afe7f0d845", "First product identifier of page 1 does not match expected value")
             expectation.fulfill()
         }
         viewModel.retrieveProductsList()
@@ -64,11 +69,16 @@ class CognizantChallengeTests: XCTestCase {
     func testProductsViewModelLoadPage2() {
         let viewModel = ProductsViewModel(dataProvider: self.dataProvider)
         let expectation = XCTestExpectation(description: "Fetch completion handler")
-        viewModel.updateHandler = { products in
-            XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+        viewModel.updateHandler = { result in
+            switch result {
+            case .failure(let error):
+                XCTFail("Expected to be a success but got a failure with \(error)")
+            case .success(let products):
+                XCTAssertEqual(products.count, 20, "Products count does not match expected value")
+                XCTAssertEqual(products.first?.identifier, "99563efaa4324acea46c213d7d96dd8c", "First product identifier of page 2 does not match expected value")
+            }
             XCTAssertEqual(viewModel.currentPage, 2, "Current page does not match expected value")
             XCTAssertEqual(viewModel.hasMorePages, true, "Has more pages flag does not match expected value")
-            XCTAssertEqual(products.first?.identifier, "99563efaa4324acea46c213d7d96dd8c", "First product identifier of page 2 does not match expected value")
             expectation.fulfill()
         }
         viewModel.retrieveProductsList(page: 2)

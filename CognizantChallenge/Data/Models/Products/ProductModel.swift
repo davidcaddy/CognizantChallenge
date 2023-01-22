@@ -36,7 +36,7 @@ class ProductModel: Decodable {
     let brandName: String?
     let applicationUrl: URL?
     let isTailored: Bool
-    let additionalInformation: AdditionalInformation
+    let additionalInformation: AdditionalInformation?
     
     enum CodingKeys: String, CodingKey {
         case identifier = "productId"
