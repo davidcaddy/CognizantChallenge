@@ -58,12 +58,11 @@ class DetailsViewController: UIViewController {
         applySnapshot(productDetailsSnapshot: self.viewModel.productDetailsSnapshot)
     }
     
-    func applySnapshot(productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>?) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, ListItem>()
-        snapshot.appendSections(Section.allCases)
-        self.dataSource.apply(snapshot, animatingDifferences: false)
-        
+    private func applySnapshot(productDetailsSnapshot: NSDiffableDataSourceSectionSnapshot<ListItem>?) {
         guard let sectionSnapshot = productDetailsSnapshot else {
+            var snapshot = NSDiffableDataSourceSnapshot<Section, ListItem>()
+            snapshot.appendSections(Section.allCases)
+            self.dataSource.apply(snapshot, animatingDifferences: false)
             return
         }
         self.dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: false)
@@ -93,7 +92,7 @@ class DetailsViewController: UIViewController {
     
     // MARK: Data Source
     
-    func createDataSource() -> DiffableDataSource {
+    private func createDataSource() -> DiffableDataSource {
         let headerCellReg = headerCellRegistration()
         let detailCellReg = detailCellRegistration()
         
@@ -114,7 +113,7 @@ class DetailsViewController: UIViewController {
 // MARK: - CollectionView Cells
 extension DetailsViewController {
     
-    func headerCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, HeaderItem> {
+    private func headerCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, HeaderItem> {
         return .init { cell, _, headerItem in
             var configuration = cell.defaultContentConfiguration()
             configuration.text = headerItem.title
@@ -126,7 +125,7 @@ extension DetailsViewController {
         }
     }
     
-    func detailCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, DetailItem> {
+    private func detailCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewListCell, DetailItem> {
         return .init { cell, _, item in
             var configuration = cell.defaultContentConfiguration()
             configuration.text = item.title

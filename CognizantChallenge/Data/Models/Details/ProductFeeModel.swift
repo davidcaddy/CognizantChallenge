@@ -56,6 +56,7 @@ struct ProductFeeModel: Decodable {
         case event = "EVENT"
         case upfront = "UPFRONT"
         case exit = "EXIT"
+        case variable = "VARIABLE"
     }
     
     let name: String

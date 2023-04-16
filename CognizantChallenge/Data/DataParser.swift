@@ -13,17 +13,13 @@ class DataParser: DataParsing {
         let jsonDecoder = JSONDecoder()
         let iso8601Formatter = ISO8601DateFormatter()
         iso8601Formatter.formatOptions = [.withDashSeparatorInDate, .withColonSeparatorInTime, .withFractionalSeconds]
-        let iso8601MillisFormatter = ISO8601DateFormatter()
-        iso8601MillisFormatter.formatOptions = [.withDashSeparatorInDate, .withColonSeparatorInTime, .withFractionalSeconds]
         
         jsonDecoder.dateDecodingStrategy = .custom { decoder in
             let container = try decoder.singleValueContainer()
             let dateString = try container.decode(String.self)
 
-            for formatter in [iso8601Formatter, iso8601MillisFormatter] {
-                if let date = formatter.date(from: dateString) {
-                    return date
-                }
+            if let date = iso8601Formatter.date(from: dateString) {
+                return date
             }
 
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "[DataParser] Cannot decode date string: \(dateString)")
